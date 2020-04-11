@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="xapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Angular JS</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="xctrl">
+    <hr>
+    <h1>Hello World</h1>
+    <input type="text" ng-model="x">
+    <br>
+    <span>{{x}}</span>
+    <hr>
+    <h1>{{operasi}}</h1>
+    <input type="text" ng-model="obj1">
+    <input type="text" ng-model="obj2">
+    <span> = {{hasil}}</span>
+    <br>
+    <br>
+    <button ng-click="operate('tambah')">Tambah</button>
+    <button ng-click="operate('kurang')">Kurang</button>
+    <button ng-click="operate('kali')">Kali</button>
+    <button ng-click="operate('bagi')">Bagi</button>
+    <hr>
+    <a href="siswa.html">Perulangan dan Pengkondisian</a>
+    <a href="crud.html">CRUD Angular</a>
+</body>
+
+</html>

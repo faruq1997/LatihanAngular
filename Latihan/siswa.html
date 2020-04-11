@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appSiswa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Siswa</title>
+    <script src="angular.js"></script>
+    <script src="siswa.js"></script>
+</head>
+
+<body ng-controller="ctrlSiswa">
+    <h1>Tabel Siswa dengan ng-repeat</h1>
+    <p>
+        <label for="key">Kata Kunci</label>
+        <input type="text" ng-model="key" placeholder="cari data siswa">
+    </p>
+    <table border="1">
+        <!-- true = descending, false = ascending -->
+        <tr>
+            <th><a href="" ng-click="boolname = urutkan('nama', boolname);">Nama</a></th>
+            <th><a href="" ng-click="boolnim = urutkan('nim', boolnim);">Nim</a></th>
+            <th><a href="" ng-click="boolipk = urutkan('ipk', boolipk);">IPK</a></th>
+        </tr>
+        <tr ng-repeat="s in (hasil = (datasiswa | filter: key | orderBy:ord:ordstatus))">
+            <td>{{s.nama}}</td>
+            <td>{{s.nim}}</td>
+            <td>{{s.ipk}}</td>
+        </tr>
+        <tr ng-if="hasil.length == 0">
+            <td colspan="3">Hasil tidak ditemukan</td>
+        </tr>
+    </table>
+    <hr>
+    <a href="index.html">Kembali ke Halaman Awal</a>
+</body>
+
+</html>
